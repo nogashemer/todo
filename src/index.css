@@ -78,6 +78,7 @@ h1 {
 .actionsBar {
   display: flex;
   align-self: center;
+  text-align: center;
 }
 
 .action {
@@ -85,6 +86,11 @@ h1 {
   width: 0.5em;
   margin: 1em;
   font-weight: 900;
+}
+
+.archive.action {
+  line-height: 1.25em;
+  font-weight: 600;
 }
 
 .action:hover {
