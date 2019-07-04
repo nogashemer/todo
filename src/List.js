@@ -13,7 +13,7 @@ export default class List extends React.Component {
 
         return <div className={this.props.type + " list"}>
             <div className="list-header"><h1>{this.props.name}</h1></div>
-            <div className="cards">
+            <div className="notes">
                 {this.props.notes.map(note => {
                     if (this.props.progressList === note.progress) {
                         return <Note
