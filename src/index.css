@@ -47,12 +47,20 @@ h1 {
   background-color: #e7b598
 }
 
+.Todo .note .backward.progress.action {
+  display: none;
+}
+
 .InProgress {
   background-color: #d4846c
 }
 
 .Done {
   background-color: #969fa5
+}
+
+.Done .note .forward.progress.action {
+  display: none;
 }
 
 .note {
