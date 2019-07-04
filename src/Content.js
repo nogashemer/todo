@@ -24,10 +24,6 @@ export default class Content extends React.Component {
         let currentNote = this.state.notes.find(note => note.id === currentId)
         let currentIndex = currentNotes.indexOf(currentNote)
 
-        console.log(currentNotes)
-        console.log(currentNote)
-        console.log(currentIndex)
-
         if (prop === "progress") {
             currentNote.progress += value;
         } else {
@@ -44,7 +40,6 @@ export default class Content extends React.Component {
 
 
     render() {
-        console.log(this.state)
         return <div className="content">
             <Form onSubmit={this.newNote} />
             <div className="lists">
