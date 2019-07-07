@@ -13,9 +13,11 @@ export default class Form extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        let formNote = this.props.notes.find(note => note.id === "form")
+        let formNoteIndex = this.props.notes.indexOf(formNote)
         this.props.onSubmit({
             text: this.state.newNoteText,
-            progress: 1,
+            progress: this.props.notes[formNoteIndex].progress,
             id: new Date().toUTCString()
         });
         this.setState({
@@ -33,9 +35,8 @@ export default class Form extends React.Component {
     render() {
 
         return <div>
-            <form onSubmit={this.handleSubmit}>
-                <input type="text" name="newNoteText" value={this.state.newNoteText} onChange={this.handleNewNoteTextChange} placeholder="add a note"></input>
-                <button>+</button>
+            <form id='note-form' onSubmit={this.handleSubmit}>
+                <textarea className="text-area" name="newNoteText" value={this.state.newNoteText} onChange={this.handleNewNoteTextChange} placeholder="add a note"></textarea>
                 {this.state.notes}
             </form>
         </div>

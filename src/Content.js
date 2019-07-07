@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from './Form';
+
 import List from './List';
 
 export default class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notes: [""],
+            notes: [{ id: "form", progress: 1 }],
         }
         this.newNote = this.newNote.bind(this)
         this.changeNote = this.changeNote.bind(this)
@@ -47,11 +47,10 @@ export default class Content extends React.Component {
 
     render() {
         return <div className="content">
-            <Form onSubmit={this.newNote} />
             <div className="lists">
-                <List name={"To do"} type={"Todo"} notes={this.state.notes} progressList={1} changeNote={this.changeNote} />
-                <List name={"In Progress"} type={"InProgress"} notes={this.state.notes} progressList={2} changeNote={this.changeNote} />
-                <List name={"Done"} type={"Done"} notes={this.state.notes} progressList={3} changeNote={this.changeNote} />
+                <List name={"To do"} type={"Todo"} notes={this.state.notes} progressList={1} changeNote={this.changeNote} newNote={this.newNote} />
+                <List name={"In Progress"} type={"InProgress"} notes={this.state.notes} progressList={2} changeNote={this.changeNote} newNote={this.newNote} />
+                <List name={"Done"} type={"Done"} notes={this.state.notes} progressList={3} changeNote={this.changeNote} newNote={this.newNote} />
             </div>
 
         </div>
