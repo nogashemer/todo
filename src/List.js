@@ -4,8 +4,8 @@ import Note from './Note';
 export default class List extends React.Component {
     constructor(props) {
         super(props);
-
     }
+
 
 
 
@@ -17,7 +17,7 @@ export default class List extends React.Component {
                 {this.props.notes.map(note => {
                     if (this.props.progressList === note.progress) {
                         return <Note
-                            key={note.id}
+                            key={note.id + note.text}
                             id={note.id}
                             text={note.text}
                             progress={note.progress}

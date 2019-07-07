@@ -6,17 +6,23 @@ export default class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            notes: [],
+            notes: [""],
         }
         this.newNote = this.newNote.bind(this)
         this.changeNote = this.changeNote.bind(this)
     }
 
     newNote(note) {
-        let newNotes = [note, ...this.state.notes]
-        this.setState({
-            notes: newNotes
-        })
+        let lastNote = this.state.notes[0]
+        console.log(note.id !== lastNote.id)
+        if (note.text !== "" && note.id !== lastNote.id) {
+            let newNotes = [note, ...this.state.notes]
+            this.setState({
+                notes: newNotes
+            })
+            console.log(note.id !== lastNote.id)
+        }
+
     }
 
     changeNote(currentId, prop, value) {
