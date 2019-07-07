@@ -47,6 +47,7 @@ export default class Content extends React.Component {
 
     render() {
         return <div className="content">
+            <h1>To Do list</h1>
             <div className="lists">
                 <List name={"To do"} type={"Todo"} notes={this.state.notes} progressList={1} changeNote={this.changeNote} newNote={this.newNote} />
                 <List name={"In Progress"} type={"InProgress"} notes={this.state.notes} progressList={2} changeNote={this.changeNote} newNote={this.newNote} />
